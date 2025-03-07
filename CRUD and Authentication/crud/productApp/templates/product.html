@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card">
+    <div class="card-header"><strong>
+            {{ Product_record.product_name }}
+                    </strong>
+    </div>
+
+    <div class="card-body">
+        <p class="card-text">
+            <strong>Product SKU: </strong>{{ product_record.Product_SKU }}
+        </p>
+
+        <p class="card-text">
+            <strong>Procurement Platform: </strong>{{ product_record.Procurement_Platform }}
+        </p>
+
+        <p class="card-text">
+            <strong>Employ ID: </strong>{{ product_record.Employ_ID }}
+        </p>
+
+        <p class="card-text">
+            <strong>THD Dept: </strong>{{ product_record.THD_Dept }}
+        </p>
+
+        <p class="card-text">
+            <strong>Unit Price: </strong>{{ product_record.Unit_Price }}
+        </p>
+
+        <p class="card-text">
+            <strong>Purchasing Links: </strong>{{ product_record.Purchasing_Links }}
+        </p>
+
+        <p class="card-text">
+            <strong>Product Category: </strong>{{ product_record.Product_Category }}
+        </p>
+
+        <p class="card-text">
+            <strong>Qty Available: </strong>{{ product_record.Qty_Available }}
+        </p>
+    </div>
+</div>
+
+<br /><br />
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+<a href="{% url 'update_record' product_record.id %}" class="btn btn-warning">Update Record</a>
+<a href="{% url 'delete_record' product_record.id %}" class="btn btn-danger">Delete</a>
+
+
+{% endblock %}
